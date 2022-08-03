@@ -1,0 +1,63 @@
+Primero una aclaración:
+Git es distinto de Github.
+Git es un programa que corren en su computadora.
+Github es una página web.
+
+
+Cómo crear un respaldo en su computadora usando Git:
+
+-Primero tienen que tener instalado Git (solo googleen Git y es la primera opción que les aparece).
+
+-Abran su proyecto en VSCode y abran la terminal (en Terminal > New terminal).
+
+-Luego de instalar Git, una sola vez tienen que hacer:
+git config --global user.email mimail@ejemplo.com
+git config --global user.name minombre
+En donde mimail@ejemplo.com es el mail que usaron para crearse la cuenta de Github y minombre es su nombre de usuario.
+Si les sale un error en rojo diciendo que git no es un comando es porque acaban de instalar Git y VSCode todavía no se
+enteró, cierren VSCode y vuelvan a abrirlo, ahora debería funcionar bien.
+
+-Para empezar a trabajar con Git en un proyecto escriban en la terminal:
+git init
+Esto inicializa el repositorio de Git (hace que la carpeta pase a ser un proyecto de Git), solo lo tienen que hacer una
+vez al inicio de cada proyecto.
+
+-Luego, cada vez que hacen cambios que quieren respaldar escriban en la terminal:
+git add .
+git commit -m "Mi comentario"
+El primer comando (git add .) pasa todos los archivos a la staging área, por ahora no se preocupen por lo que eso significa.
+El segundo comando (git commit -m "Mi comentario") crea un commit, que sería un respaldo del estado actual del proyecto, algo
+así como un punto de guardado en un videojuego. Este respaldo está en su disco duro. En donde puse Mi comentario deben poner
+un comentario describiendo los cambios que hayan hecho al proyecto, si es la primera vez puden simplemente poner "Creación del
+proyecto" o similar.
+
+
+Cómo subir el respaldo a la nube usando Github:
+
+-Primero tienen que crearse la cuenta de Github.
+
+-Vayan a la página de inicio de Github, en la esquina superior izquierda deben tener un botón verde que dice "New", cliquéenlo.
+
+-Les va aparecer una página con algunas opciones. Pongan el nombre del proyecto en donde dice "Repository name", el resto lo
+pueden dejar con el valor por defecto y le dan clic al botón de "Create repository".
+
+-Luego les va a aparecer una página con instrucciones para subir su repositorio, pueden simplemente hacer:
+git remote add origin direcciondemirepositorio
+Esta línea de código indica el repositorio de Github (es decir el lugar en la nube) en el que quieren respaldar su repositorio
+de Git (que hasta ahora solo está respaldado en su disco duro).
+Luego pueden hacer cada vez que quieran subir su respaldo local (de su disco duro) a la nube deben hacer:
+git push -u origin master
+Puede que les pida que se autentiquen con su cuenta de Github, ingresen su nombre de usuario y contraseña y denle aceptar a lo
+que les pide.
+master es el nombre de la rama principal (por ahora no se preocupen de qué es esto), si no les funciona puede ser porque Git
+le haya puesto main en vez de master, en ese caso prueben:
+git push -u origin main
+
+-Ya tienen su proyecto publicado y respaldado en Github.
+
+
+La mayoría de estos pasos solo los tienen que hacer cuando instalan Git y Github o cuando crean un nuevo proyecto. Luego de
+eso cuando quieren crear un nuevo punto de guardado en su proyecto solo tienen que ejecutar 3 comandos:
+git add .
+git commit -m "Mi comentario"
+git push -u origin master
