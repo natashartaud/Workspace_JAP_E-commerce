@@ -18,7 +18,7 @@ function validateForm() {
         }
         if (psw == "") {
             pswInput.classList.add("imputError");
-            pswMensaje.style.display = "block";
+            //pswMensaje.style.display = "block";
         }
         return false;
     }
