@@ -188,3 +188,78 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+
+/* CSS LOGING STAR*/
+
+.text-center {
+  text-align: center!important;
+}
+
+form {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.imputError {
+  border: 1px solid red !important
+}
+
+
+button {
+  background-color: #229FBC;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+img.avatar {
+  width: 90%;
+  border-radius: 50%;
+  
+  
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.errorMensaje{
+  font-size: small;
+  color: red;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/* CSS LOGING END*/
