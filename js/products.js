@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             carsProductList= resultObj.data.products
             showCategoriesList()
-            
+   
         }
     });
 });
