@@ -1,20 +1,30 @@
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("autos").addEventListener("click", function() {
-        localStorage.setItem("catID", 101);
-        window.location = "products.html"
-    });
-    document.getElementById("juguetes").addEventListener("click", function() {
-        localStorage.setItem("catID", 102);
-        window.location = "products.html"
-    });
-    document.getElementById("muebles").addEventListener("click", function() {
-        localStorage.setItem("catID", 103);
-        window.location = "products.html"
-    });
-});
+
+function validateForm() {
+    let name    = document.forms["myFormLogin"]["name"].value;
+    let psw     = document.forms["myFormLogin"]["psw"].value;
+    emailInput  = document.getElementById("emailInput");
+    emailInput.classList.remove("imputError");
+    pswInput    = document.getElementById("pswInput");
+    pswInput.classList.remove("imputError");
+    eMensaje    = document.getElementById ("emailMensaje")
+    eMensaje.style.display = "none"
+    pswMensaje  = document.getElementById ("pswMensaje")
+    pswMensaje.style.display = "none"
+
+    if ((name == "") || (psw == "")) {
+        if (name == "") {
+            emailInput.classList.add("imputError");
+            eMensaje.style.display = "block";
+        }
+        if (psw == "") {
+            pswInput.classList.add("imputError");
+            pswMensaje.style.display = "block";
+        }
+        return false;
+    }
+}
 
 
-  
 
 
 
