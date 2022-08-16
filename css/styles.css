@@ -217,6 +217,9 @@ input[type=text], input[type=password] {
   border: 1px solid red !important
 }
 
+.abcRioButtonBlue{
+  width: 100% !important;
+}
 
 button {
   background-color: #229FBC;
