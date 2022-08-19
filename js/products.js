@@ -2,7 +2,7 @@
 
 let carsProductList = [];
 
-function showCategoriesList() {
+function showProductList() {
 
     let htmlContentToAppend = "";
     for (let i = 0; i < carsProductList.length; i++) {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CARS_PRODUCT_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             carsProductList= resultObj.data.products
-            showCategoriesList()
+            showProductList()
    
         }
     });
