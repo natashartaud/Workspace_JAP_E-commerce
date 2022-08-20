@@ -4,7 +4,7 @@ let carsProductList = [];
 
 function showProductList() {
 
-    let htmlContentToAppend = "";
+    let htmlContentToAppend = ""; //cocatenar info // 
     for (let i = 0; i < carsProductList.length; i++) {
         let car = carsProductList[i];
 
