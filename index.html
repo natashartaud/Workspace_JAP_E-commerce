@@ -43,7 +43,7 @@
       <script>
         function handleCredentialResponse(response) {
           //console.log("Encoded JWT ID token: " + response.credential);
-          window.replace('home.html');
+          location.replace('home.html');
         }
         window.onload = function () {
           google.accounts.id.initialize({
