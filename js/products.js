@@ -2,6 +2,7 @@
 const ORDER_ASC_BY_PRICE = "0-1000000";
 const ORDER_DESC_BY_PRICE = "1000000-0";
 const ORDER_BY_PROD_REL = "Rel.";
+
 let ProductList = [];
 let currentSortCriteria = undefined;
 let minPrice = undefined;
@@ -36,6 +37,55 @@ function sortProduct(criteria, array){
 
     return result;
 }
+
+const searchProduct = document.querySelector("#searchProduct");
+const resultado = document.querySelector("#product-list-container"); 
+
+const filtradoDeProductos = ()=>{
+    resultado.innerHTML = "";
+    const texto = searchProduct.value.toLowerCase();
+
+    for (let product of ProductList) { 
+        let nombre = product.name.toLowerCase();
+        let descripcion = product.description.toLowerCase();
+
+        if (nombre.indexOf(texto) !== -1 || descripcion.indexOf(texto) !== -1) {
+            resultado.innerHTML += `
+                    
+                <div class="row">
+                    <div class="col-3">
+                        <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">${product.name}</h4>
+                            <small class="text-muted"> Autos vendidos:${product.soldCount} </small>
+                        </div>
+                        <br> 
+                        <br>
+                        <p class="mb-1"> Descripcion: </p>
+                        <p class="mb-1">${product.description}</p>
+                        <p class="mb-1">${product.currency} ${product.cost}</p>
+                        
+                    </div>
+                </div>
+             `
+               
+        }
+
+    }
+
+    if (resultado.innerHTML ==="") {
+        resultado.innerHTML+= `
+
+        <h1> No contamos con ese producto por el momento... </h1>
+        `
+        
+    }
+}
+
+searchProduct.addEventListener('keyup',filtradoDeProductos)
+filtradoDeProductos();
 
 
 function showProductList() {
@@ -86,6 +136,7 @@ function sortAndShowProduct(sortCriteria, productArray){
     //Muestro las categorías ordenadas
     showProductList();
 }
+
 
 
 
@@ -142,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductList();
     });
 
-
+   
 });
 
 if (localStorage.getItem("text")) {
