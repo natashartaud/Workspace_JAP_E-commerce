@@ -2,6 +2,8 @@
 const ORDER_ASC_BY_PRICE = "0-1000000";
 const ORDER_DESC_BY_PRICE = "1000000-0";
 const ORDER_BY_PROD_REL = "Rel.";
+const searchProduct = document.querySelector("#searchProduct");
+const resultado = document.querySelector("#product-list-container"); 
 
 let ProductList = [];
 let currentSortCriteria = undefined;
@@ -38,8 +40,7 @@ function sortProduct(criteria, array){
     return result;
 }
 
-const searchProduct = document.querySelector("#searchProduct");
-const resultado = document.querySelector("#product-list-container"); 
+
 
 const filtradoDeProductos = ()=>{
     resultado.innerHTML = "";
