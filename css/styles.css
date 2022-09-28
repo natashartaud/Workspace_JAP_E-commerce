@@ -264,8 +264,36 @@ img.avatar {
     width: 100%;
   }
 }
-/* CSS LOGING END*/
 
-/* Buscador de productoss */
+.p-4 {
+  padding: 0rem!important;
+}
 
-/* CSS LOGING END*/
+
+textarea.form-control {
+  min-height: calc(1.5em + (0.75rem + 2px));
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.30rem;
+  
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+textarea {
+  resize: none;
+}

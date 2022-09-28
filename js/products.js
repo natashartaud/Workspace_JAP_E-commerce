@@ -53,7 +53,7 @@ const filtradoDeProductos = ()=>{
         if (nombre.indexOf(texto) !== -1 || descripcion.indexOf(texto) !== -1) {
             resultado.innerHTML += `
                     
-                <div class="row">
+                <div class="row" >
                     <div class="col-3">
                         <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
                     </div>
@@ -88,6 +88,10 @@ const filtradoDeProductos = ()=>{
 searchProduct.addEventListener('keyup',filtradoDeProductos)
 filtradoDeProductos();
 
+function setProductID(id) {
+    localStorage.setItem("ProductID", id);
+    window.location = "product-info.html"
+}
 
 function showProductList() {
 
@@ -99,7 +103,7 @@ function showProductList() {
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(product.cost) <= maxPrice))){
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${product.id})" class="list-group-item list-group-item-action cursor-active">
+            <div  onclick="setProductID(${product.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
@@ -119,6 +123,7 @@ function showProductList() {
                 </div>
             </div>
              `
+
         }
         document.getElementById("product-list-container").innerHTML = htmlContentToAppend;
     }
@@ -193,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductList();
     });
+
 
    
 });

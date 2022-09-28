@@ -36,13 +36,31 @@
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>
+  
+  
+  <div class="container mt-4" id="infoContainer"> 
+    <h2 class= "p-4" id="nameProduct"></h2>
+    <div id="infoProduct" ></div>
+    <div id="imgContainer" class="container d-flex"> </div>
+
+    <h3> Comentarios:</h3>
+    <div id="Comments"></div>
+    <form class ="form-control" action="" >
+      <h3>Comentar</h3>
+      <label for="tuopinion">Tu opinión:</label><br>
+      <textarea form-control col-6 mb-3 id="comentarioUsuario"></textarea> <br>
+      <p>Tu puntuación:</p>
+      <select id="puntaje" name="puntaje" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br><br>
+      <button type="submit" class="submitComments" >Enviar</button>
+    </form>
+  </div>
+  
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -53,6 +71,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -64,6 +83,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>
