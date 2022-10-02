@@ -46,10 +46,17 @@ let getJSONData = function(url){
 const InputName = document.getElementById ("emailInput");
 const buttonIngreso = document.getElementById ("usuarioregistrado");
 
+InputName.innerHTML=localStorage.getItem("text", InputName.value);
+
 buttonIngreso.addEventListener ("click",(evt) => {
   if(InputName.value) localStorage.setItem("text", InputName.value);
   else localStorage.removeItem("text")
 })
+
+function setProductID(id) {
+  localStorage.setItem("ProductID", id);
+  window.location = "product-info.html"
+}
 
 
 

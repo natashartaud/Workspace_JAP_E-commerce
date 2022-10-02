@@ -30,6 +30,16 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="emailInput" data-bs-toggle="dropdown" aria-expanded="false">
+              
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="emailInput">
+              <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+            </ul>
+          </div>
           <li class="nav-item">
           </li>
         </ul>
@@ -41,7 +51,21 @@
   <div class="container mt-4" id="infoContainer"> 
     <h2 class= "p-4" id="nameProduct"></h2>
     <div id="infoProduct" ></div>
-    <div id="imgContainer" class="container d-flex"> </div>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div id="productImages" class="carousel-inner">
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>    <br> 
+    <p><b> Estos productos tambien te pueden llegar a interesar </b></p>
+    <div id="relatedProduct" class="container d-flex justify-content-start gap-3"></div>
 
     <h3> Comentarios:</h3>
     <div id="Comments"></div>

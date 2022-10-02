@@ -6,11 +6,12 @@
   let infoProductsContainer = document.getElementById("infoProduct");
   
   fetch (PRODUCT_INFO_URL).then(response=>response.json()).then(data =>{   
-      dataProducts = data;
+    dataProducts = data;
       imagesProducts = dataProducts.images;
       showProductTitle ();
       showProductData ();
       showProductImages(imagesProducts);
+      relatedProduct ();
       });
   
   fetch (PRODUCT_INFO_COMMENTS_URL).then(response=>response.json()).then(data =>{   
@@ -53,20 +54,18 @@
               
       }
       function showProductImages(){
-          let htmlImageToAppend = "";
-          for (let image of imagesProducts) {
-              htmlImageToAppend =  `
-              <div>
-              
-              <img src=" ` + image + `" alt="imagen de producto" class= "img-thumbnail">
-              </div>
-              `
-          
-              document.getElementById("imgContainer").innerHTML += htmlImageToAppend;    
-      }
-      
-  }
-  
+        let htmlImageToAppend = "";
+        let itemClass = "carousel-item active";
+        for (let image of imagesProducts) {
+            htmlImageToAppend =  `
+            <div class="` + itemClass + `">
+                <img src=" ` + image + `" alt="imagen de producto" class="d-block w-100" >
+            </div>`
+            itemClass = "carousel-item";
+            document.getElementById("productImages").innerHTML += htmlImageToAppend;    
+    }
+    
+}
   const getProductComments = (user,dateTime,score, description )=> {
       return `<div>
         <p><b>${user}</b>-${dateTime}-${crearScore(score)}</p>
@@ -85,6 +84,22 @@
      return htmlScore;
     }
   
+
+    function relatedProduct () {
+        let relatedProduct = document.getElementById ('relatedProduct')
+        for (let product of dataProducts.relatedProducts){
+            relatedProduct.innerHTML+= `
+            <div onclick="setProductID(${product.id})" class="m-0 w-25">
+   
+       
+            <img src="${product.image}" alt="${product.name}" class="img-thumbnail imgsize">
+            <p class="mb-1">${product.name}</p>
+            
+          
+            </div>
+            `
+        }
+    }
 
 
  

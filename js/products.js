@@ -88,10 +88,7 @@ const filtradoDeProductos = ()=>{
 searchProduct.addEventListener('keyup',filtradoDeProductos)
 filtradoDeProductos();
 
-function setProductID(id) {
-    localStorage.setItem("ProductID", id);
-    window.location = "product-info.html"
-}
+
 
 function showProductList() {
 

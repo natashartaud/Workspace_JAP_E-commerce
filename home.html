@@ -31,12 +31,16 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="nombreUsuario"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Cerrar sesion</a>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="emailInput" data-bs-toggle="dropdown" aria-expanded="false">
+              
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="emailInput">
+              <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
